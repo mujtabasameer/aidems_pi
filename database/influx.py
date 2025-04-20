@@ -19,7 +19,7 @@ def get_latest_sensor_data():
     json = points[0]
     
     if 'time' in json:
-        del json['time']
+        del json['time'] /
 
     return json
 
@@ -37,3 +37,4 @@ def get_historical_sensor_data():
             del point['time']
 
     return json
+
