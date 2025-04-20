@@ -32,8 +32,8 @@ def get_historical_sensor_data():
         return []
     
     json = points
-    for point in json:
-        if 'time' in point:
-            del point['time']
+    # for point in json:
+    #     if 'time' in point:
+    #         del point['time']
 
     return json

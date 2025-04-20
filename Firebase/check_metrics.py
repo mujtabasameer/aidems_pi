@@ -13,19 +13,19 @@ def notification(aqi,smoke_level,NO):
         if aqi>=150 and aqi<=200:
             send_notification("AQI Alert", f"Unhealthy AQI: {aqi}. Stay indoors!")
             last_aqi_alert=current_time
-            store_alerts("AQI Alert", "High AQI Detected!", aqi)
+            store_alerts("AQI Alert", "High AQI Detected!", str(aqi))
         elif 200 <= aqi < 300:
             send_notification("AQI Alert", f"Very Unhealthy AQI: {aqi}. Stay indoors!")
             last_aqi_alert=current_time
-            store_alerts("AQI Alert", "High AQI Detected!", aqi)
+            store_alerts("AQI Alert", "High AQI Detected!", str(aqi))
         elif 300 <= aqi < 400:
             send_notification("AQI Alert", f"Hazardous AQI: {aqi}. Emergency conditions!")
             last_aqi_alert=current_time
-            store_alerts("AQI Alert", "High AQI Detected!", aqi)
+            store_alerts("AQI Alert", "High AQI Detected!", str(aqi))
         elif aqi >= 400:
             send_notification("AQI Alert", f"Severe Hazard! AQI: {aqi}. Health emergency!")
             last_aqi_alert=current_time
-            store_alerts("AQI Alert", "High AQI Detected!", aqi)
+            store_alerts("AQI Alert", "High AQI Detected!", str(aqi))
 
     if last_smoke_alert is None or current_time-last_smoke_alert>cooldown_time:
         if smoke_level == "Mild":
